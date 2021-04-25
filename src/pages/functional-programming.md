@@ -33,7 +33,7 @@ const endState = app(someData)
 
 ### Transformations via pure functions
 
-In mathematical terms a function's output should always be consistent for any given input, also known as a **pure function**. The benefit of functional purity is that we always get a predictable result.
+In mathematical terms a **pure function** should always be produce a consistent output for any given input. The benefit of functional purity is that we always get a predictable result.
 
 ```javascript
 function sum(x, y) {
