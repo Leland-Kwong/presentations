@@ -10,8 +10,11 @@ const classes = {
     minHeight: '100vh'
   }),
   Header: css({
-    padding: '1rem 1rem 0',
-    marginBottom: '1rem'
+    fontSize: '3rem',
+    padding: '1.5rem 1rem',
+    margin: '0 0 1.5rem',
+    background: '#333',
+    color: '#bd93f9',
   }),
   Main: css({
     padding: '1rem',
@@ -57,8 +60,10 @@ function App() {
 
   return (
     <div className={classes.App}>
-      <header className={classes.Header}>
-        <h1>Presentations</h1>
+      <header>
+        <h1 className={classes.Header}>
+          Presentations
+        </h1>
       </header>
       <main className={classes.Main}>
         <ReactMarkdown 

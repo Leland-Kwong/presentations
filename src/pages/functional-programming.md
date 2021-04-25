@@ -2,11 +2,7 @@
 
 ## What is it?
 
-The goal of functional programming is to keep side-effects to an absolute minimum, and pushing any state changes to the edge of the application whenever possible.
-
-## Why are side-effects bad?
-
-A vast amount of bugs in our applications tend to come from unexpected changes to state which include: database updates, DOM changes (web browser) or local app state.
+The primary idea behind functional programming is to keep side-effects to an absolute minimum by keeping pushing state changes to the edges of an application.
 
 ## Types of side-effects
 
@@ -17,6 +13,10 @@ A vast amount of bugs in our applications tend to come from unexpected changes t
 * Writing to the network.
 * Triggering any external process.
 * Calling any other functions with side-effects.
+
+## What is wrong with side effects?
+
+A vast amount of bugs in our applications tend to come from unexpected changes to state which include: database updates, DOM changes (web browser) or local app state. These changes in external state create unpredictability and cause those, **"it works on Mondays, and sometimes on Tuesdays"**, situations.
 
 ## Changing state without changing it
 
@@ -48,7 +48,7 @@ assert.equal(
 
 ### Side effects break purity
 
-In order to understand why side-effects can be problematic, lets introduce a new functional called `sumWithPreviousState`:
+In order to understand why side-effects can be problematic, lets introduce a new function called `sumWithPreviousState`:
 
 ```javascript
 let state = 0
