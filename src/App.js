@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula as codeStyle } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import docPath from './pages/functional-programming.md'
+import remarkToc from 'remark-toc'
+import remarkSlug from 'remark-slug'
 
 const classes = {
   App: css({
@@ -13,7 +15,7 @@ const classes = {
     fontSize: '3rem',
     padding: '1.5rem 1rem',
     margin: '0 0 1.5rem',
-    background: '#333',
+    background: '#444',
     color: '#bd93f9',
   }),
   Main: css({
@@ -41,7 +43,7 @@ const markdownComponents = {
 
 const docFetcher = (
   url
-) => fetch(`http://localhost:3000${url}`)
+) => fetch(`${document.location.origin}${url}`)
   .then(docPromise => docPromise.text())
 
 function App() {
@@ -67,6 +69,10 @@ function App() {
       </header>
       <main className={classes.Main}>
         <ReactMarkdown 
+          remarkPlugins={[
+            remarkSlug,
+            remarkToc, 
+          ]}
           components={markdownComponents}
         >
           {doc}
