@@ -130,19 +130,19 @@ Copying the entire object each time we want to make a new change has an `O(N)` t
 
 #### Persistent immutable data structures
 
-Todo: We could talk about HAMT and how languages like Clojure and libraries like immutablejs use this to do efficient immutable updates.
+**Todo**: We could talk about HAMT and how languages like Clojure and libraries like immutablejs use this to do efficient immutable updates.
 
 ## Managing side effects
 
 ### Push side effects to the edges
 
-Todo: need to finish this section up
+**Todo**: need to finish this section up
 
 Anytime you would want do a side effect, consider if you can move it further up the function chain. Some examples of how we might do this:
 
 ### React is pure, Vue and Angular are partially pure
 
-Todo: We could talk about how frontend libraries like React and Vue make state management vastly simpler by eliminating hand-written DOM manipulation. We would also talk about the difference with how they manage state, where React never mutates, and Vue is all about mutation. We can also talk about how both libraries do side-effect free rendering.
+**Todo**: We could talk about how frontend libraries like React and Vue make state management vastly simpler by eliminating hand-written DOM manipulation. We would also talk about the difference with how they manage state, where React never mutates, and Vue is all about mutation. We can also talk about how both libraries do side-effect free rendering.
 
 ## Additional resources
 
