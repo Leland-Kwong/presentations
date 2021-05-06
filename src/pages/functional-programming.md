@@ -163,3 +163,6 @@ Anytime you would want do a side effect, consider if you can move it further up 
 * [Haskell](https://www.haskell.org/)
 * [F#](https://fsharp.org/)
 * [Elixir](https://elixir-lang.org/learning.html)
+
+### Functional databases
+* [Datomic](https://www.datomic.com/)
