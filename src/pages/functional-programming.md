@@ -24,7 +24,7 @@ Examples of side effects include:
 
 ### All about data transformation
 
-The ultimate goal of every application is to transform data and produce a desired end-state, then using that end-state to make side-effects. We can think of this as: 
+The ultimate goal of every application is to transform data to a desired end-state, and use that end-state to generate side-effects. We can think of this as:
 
 ```javascript
 const endState = app(someInputData)
@@ -124,7 +124,7 @@ This definitely isn't as convenient to write as `array.push` or `array.splice`. 
 
 ### Structural sharing for high-performance transformations
 
-Copying the entire object each time we want to make a new change has an `O(N)` time complexity, meaning it takes `n` operations to complete, where `n` is the number of items for that object. Structural sharing can reduce this time significantly by copying only parts of the object that need changing. 
+Copying the entire object each time we want to make a new change has an `O(N)` time complexity, meaning it takes `n` operations to complete, where `n` is the number of items for that object. Structural sharing can reduce this time significantly by copying only parts of the object that need changing.
 
 > "It’s kind of similar to the way git manages multiple versions of your source code: git doesn’t copy all the files on each commit. Instead, the files that are not changed by a commit are shared with previous commits." - [Yehonathan Sharvit on structural sharing](https://blog.klipse.tech/javascript/2021/02/26/structural-sharing-in-javascript.html)
 
