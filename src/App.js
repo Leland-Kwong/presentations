@@ -11,13 +11,6 @@ const classes = {
   App: css({
     minHeight: '100vh'
   }),
-  Header: css({
-    fontSize: '3rem',
-    padding: '1.5rem 1rem',
-    margin: '0 0 1.5rem',
-    background: '#444',
-    color: '#bd93f9',
-  }),
   Main: css({
     padding: '1rem',
   })
