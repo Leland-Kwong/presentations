@@ -62,11 +62,6 @@ function App() {
 
   return (
     <div className={classes.App}>
-      <header>
-        <h1 className={classes.Header}>
-          Presentations
-        </h1>
-      </header>
       <main className={classes.Main}>
         <ReactMarkdown 
           remarkPlugins={[
