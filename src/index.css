@@ -15,6 +15,10 @@ body {
   line-height: 1.4;
 }
 
+:target {
+  color: rgb(80, 250, 123);
+}
+
 h1, h2, h3, h4 {
   color: #eee
 }
@@ -53,10 +57,11 @@ pre, pre {
   background: rgb(31 32 41);
   padding: 1rem;
   font-size: 14px;
+  max-width: 350px;
 }
 
 #table-of-contents + ul li {
-  /* list-style: none; */
+  list-style: none;
   list-style-position: inside;
   margin: 0;
 }

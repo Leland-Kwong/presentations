@@ -4,7 +4,7 @@
 
 ## Why functional?
 
-The primary goal of functional programming is to write predictable programs by pushing all side effects towards the edges of the system.
+The primary goal of functional programming is to write predictable programs by pushing all side effects towards the edges of the system. The way we achieve this is through immutable data transformations and pure functions.
 
 ## What are side effects?
 
@@ -175,7 +175,7 @@ assert.equal(
 ) // false
 ```
 
-### Structural sharing for high-performance transformations
+### Structural sharing for high-performance
 
 Copying the entire object each time we want to make a new change has an `O(N)` time complexity, meaning it takes `n` operations to complete, where `n` is the number of items for that object. Structural sharing can reduce this time significantly by copying only parts of the object that need changing.
 
@@ -193,7 +193,7 @@ Copying the entire object each time we want to make a new change has an `O(N)` t
 
 Anytime you would want do a side effect, consider if you can move it further up the function chain. Some examples of how we might do this:
 
-### React is pure, Vue and Angular are partially pure
+### React is pure, Vue and Angular partially
 
 **Todo**: We could talk about how frontend libraries like React and Vue make state management vastly simpler by eliminating hand-written DOM manipulation. We would also talk about the difference with how they manage state, where React never mutates, and Vue is all about mutation. We can also talk about how both libraries do side-effect free rendering.
 
