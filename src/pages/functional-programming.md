@@ -4,7 +4,7 @@
 
 ## Why functional?
 
-The primary goal of functional programming is to write predictable programs by pushing all side effects towards the edges of the system. The way we achieve this is through immutable data transformations and pure functions.
+The primary goal of functional programming is to write predictable programs by pushing all side effects towards the edges of the system. The way we achieve this is through **immutable data transformations** and **pure functions**.
 
 ## What are side effects?
 
@@ -151,8 +151,8 @@ const todos1 = [
   }
 ]
 
-const todos2 = produce(todos1, (draft) => {
-  draft[0].done = false 
+const todos2 = produce(todos1, (baseState, draftState) => {
+  draftState[0].done = false
 })
 
 assert.equal(
@@ -165,8 +165,8 @@ assert.equal(
   todos2[0]
 ) // true
 
-const todos3 = produce(todos2, (draft) => {
-  draft[0].done = true 
+const todos3 = produce(todos2, (baseState, draftState) => {
+  draftState[0].done = true
 })
 
 assert.equal(
