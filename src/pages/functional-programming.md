@@ -12,7 +12,7 @@ A vast amount of bugs in applications tend to come from unexpected changes to st
 
 Examples of side effects include:
 
-* Modifying any external variable or object property (e.g., a global variable, or a variable in the parent function scope chain)
+* Mutating a variable or object property
 * Logging to the console.
 * Writing to the screen.
 * Writing to a file.
@@ -24,11 +24,21 @@ Examples of side effects include:
 
 ### All about data transformation
 
-The ultimate goal of every application is to transform data to a desired end-state, and use that end-state to generate side-effects. We can think of this as:
+The ultimate goal of every application is to transform data to a desired end-state, and use that end-state to generate side-effects. Consider a simple ui application that responds to user input:
 
 ```javascript
-const endState = app(someInputData)
-sideEffects(endState)
+const run = (state) => {
+  // side-effect
+  render(state)
+
+  onInput((event) => {
+    const newState = transformData(state, event)
+    // continue cycle
+    run(newState)
+  })
+}
+
+run({})
 ```
 
 ### Transformations via pure functions
