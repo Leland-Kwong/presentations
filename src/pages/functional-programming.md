@@ -6,6 +6,15 @@
 
 The primary goal of functional programming is to write predictable programs by pushing all side effects towards the edges of the system.
 
+## Tradeoffs
+
+Like many programming patterns, functional programming has its own set of tradeoffs:
+
+* can be slower than direct mutation
+* can require more memory
+
+Keep in mind, when practiced in a principled manner, we can substantially mitigate these tradeoffs.
+
 ## What are side effects?
 
 A vast amount of bugs in applications tend to come from unexpected changes to state, also known as **side effects**.
@@ -130,7 +139,41 @@ const listB = [
 ]
 ```
 
-This definitely isn't as convenient to write as `array.push` or `array.splice`. Thankfully, a library called [immer](https://www.npmjs.com/package/immer) allows us to use native array and object mutation methods and it handles all the immutable copying for us.
+This definitely isn't as convenient to write as `array.push` or `array.splice`. Thankfully, a library called [immer](https://www.npmjs.com/package/immer) allows us to use native array and object mutation methods and it handles all the immutable copying for us. Here's an example of how powerful and simple this library is:
+
+```javascript
+import { produce } from 'immer'
+
+const todos1 = [
+  {
+    text: 'get the milk',
+    done: false
+  }
+]
+
+const todos2 = produce(todos1, (draft) => {
+  draft[0].done = false 
+})
+
+assert.equal(
+  todos1,
+  todos2
+) // true
+
+assert.equal(
+  todos1[0],
+  todos2[0]
+) // true
+
+const todos3 = produce(todos2, (draft) => {
+  draft[0].done = true 
+})
+
+assert.equal(
+  todos1,
+  todos2
+) // false
+```
 
 ### Structural sharing for high-performance transformations
 
