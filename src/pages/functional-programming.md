@@ -6,15 +6,6 @@
 
 The primary goal of functional programming is to write predictable programs by pushing all side effects towards the edges of the system.
 
-## Tradeoffs
-
-Like many programming patterns, functional programming has its own set of tradeoffs:
-
-* can be slower than direct mutation
-* can require more memory
-
-Keep in mind, when practiced in a principled manner, we can substantially mitigate these tradeoffs.
-
 ## What are side effects?
 
 A vast amount of bugs in applications tend to come from unexpected changes to state, also known as **side effects**.
@@ -28,6 +19,15 @@ Examples of side effects include:
 * Writing to the network.
 * Triggering any external process.
 * Calling any other functions with side-effects.
+
+## Tradeoffs
+
+Like many programming patterns, functional programming has its own set of tradeoffs:
+
+* can be slower than direct mutation
+* can require more memory
+
+Keep in mind, when practiced in a principled manner, we can substantially mitigate these tradeoffs.
 
 ## Thinking functionally
 
@@ -199,7 +199,7 @@ Anytime you would want do a side effect, consider if you can move it further up 
 
 ## Additional resources
 
-### Popular functional javascript libraries
+### Javascript libraries
 
 * [React](https://reactjs.org)
 * [Redux](https://redux.js.org/)
