@@ -26,6 +26,19 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "rules": {
+      "import/no-unresolved": [
+        2,
+        {
+          "commonjs": true,
+          "amd": true
+        }
+      ],
+      "import/named": 2,
+      "import/namespace": 2,
+      "import/default": 2,
+      "import/export": 2
+    },
     "extends": [
       "react-app",
       "react-app/jest"
@@ -42,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.22.1"
   }
 }
