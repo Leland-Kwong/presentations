@@ -8,9 +8,7 @@ The primary goal of functional programming is to write predictable programs by p
 
 ## What are side effects?
 
-A vast amount of bugs in applications tend to come from unexpected changes to state, also known as **side effects**.
-
-Examples of side effects include:
+A vast amount of bugs in applications tend to come from unexpected changes to state, which can occur from a variety of actions such as:
 
 * Mutating a variable or object property
 * Logging to the console.
